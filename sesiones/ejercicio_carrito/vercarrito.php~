@@ -1,0 +1,36 @@
+<?php
+require("funciones.php");
+require ("compra.php");
+include("../seguridad.php");
+mostrar_carrito();
+
+
+
+/*
+require ("compra.php");	
+
+if (!isset ($_COOKIE["carrito"])) {
+		echo "El carrito está vacío";
+	}
+	else {
+		echo "Llevas $unidadestotal artículos seleccionados.";
+	}
+
+
+*/
+?>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ver Carrito</title>
+</head>
+
+<body>
+<br>
+
+<br>
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+#titulo {
+    background-color: orange;
+}
+
+#editar {
+    background-color: SpringGreen;
+}
+
+#borrar {
+    background-color: red;
+}
+
+#incorrecto {
+    background-color: red;
+}
+
+#correcto {
+
+}
+
+table tr td {
+    border: 1px solid black;
+}
+
+h1 {
+    padding-left: 300px;
+}

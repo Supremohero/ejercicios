@@ -1,0 +1,26 @@
+<?php
+require("funciones.php");
+require("../seguridad.php");
+setcookie("carrito[ref1]", '', time()-100);
+setcookie("carrito[ref2]", '', time()-100);
+setcookie("carrito[ref3]", '', time()-100);
+
+
+?>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Compra realizada</title>
+</head>
+
+<body>
+<h1>Compra realizada</h1>
+<br>
+<p>Gracias por su compra <b> <?php echo $_SESSION["user"]; ?></b></p>
+<br>
+<a href="tienda.php"><button>Tienda</button></a>
+<a href="../logout.php"><button>Cerrar sesión</button></a>
+
+</body>
+</html>

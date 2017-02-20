@@ -1,0 +1,36 @@
+		<div id="navabajo">
+		<a href="#">Volver</a> | 
+		<a href="#">Portada</a> | 
+		<a href="#">Mapa del sitio</a>
+		</div>
+	</div>
+	<div id="lateral">
+		<h2 class="titlat">Buscar</h2>
+		<div id="fbuscar" class="cuerpolateral">
+			<form>
+				<div id="campotexto"><input type="text" name="criterio"></div>
+				<div id="botonbuscar"><input type=image src="img/go.gif" width="25" height="15"></div>
+				<div class="radio"><input type="radio" name="op" value="1"> En la Web del invierno</div>
+				<div class="radio"><input type="radio" name="op" value="2"> En toda la Web</div>
+			</form>
+		</div>
+		<h2 class="titlat">Registro</h2>
+		<div id="registro" class="cuerpolateral">
+			<a href="#">Registrese con nosotros</a> y obtenga muchas ventajas.
+		</div>
+		<h2 class="titlat">Otras informaciones</h2>
+		<div id="otras" class="cuerpolateral">
+			<ul>
+			<li><a href="#">Quienes somos</a>
+			<li><a href="#">Nuestra misión</a>
+			<li><a href="#">Agenda de eventos</a>
+			</ul>
+		</div>
+	</div>
+	<div id="pie">
+		Pruebas de maquetación CSS &copy; 2005 DesarrolloWeb.com
+	</div>
+</div>
+</div>
+</body>
+</html>
