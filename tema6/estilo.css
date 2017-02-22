@@ -1,5 +1,5 @@
 BODY {
-	background : #C0D9D9 url(img/fondo.gif) repeat;
+	background : #C0D9D9;
 	font : 8pt Verdana, Geneva, Arial, Helvetica, sans-serif;
 	color : #666666;
 	margin : 20px 0px 20px 0px;
@@ -90,6 +90,13 @@ H1{
 	margin : 10px 10px 0px 10px;
 	padding-bottom:10px;
 }
+
+
+#incorrecto {
+    background-color: Red;
+    color: Gainsboro;
+}
+
 
 .cuerpolateral{
 	padding: 5px 4px 13px 10px;

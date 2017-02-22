@@ -11,7 +11,7 @@
 <div id="contenedor">
 	<div id="cabecera"><img src="img/cabecera.png" width="700" height="106" alt="Tienda Daniel Muñoz" border="0"></div>
 	<div id="navegador">
-		<a href="#" class="enlacenav">Inicio</a> |  
+		<a href="index.php" class="enlacenav">Inicio</a> |  
 		<a href="#" class="enlacenav">Quienes somos</a> | 
 		<a href="#" class="enlacenav">Contacto</a> | 
 		<a href="#" class="enlacenav">Información sobre los envíos</a> | 

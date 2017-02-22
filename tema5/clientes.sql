@@ -13,3 +13,5 @@ email CHAR(40) NOT NULL
 );
 
 INSERT INTO clientes (nombre, DNI, direccion, localidad, provincia, telefono, email) VALUES ('Juan Jose Martinez Lopez', '22333444b', 'C/ el peral 24h', 'Aspe', 'Alicante', '654567876', 'juanjo@hotmail.com');
+
+

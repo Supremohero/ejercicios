@@ -28,18 +28,18 @@ if (isset($_GET["errorusuario"])){
 ?>
 <form action="login.php" method="post">
 <label>Usuario :</label>
-<input name="usuario" placeholder="usuario" type="text">
+<input name="username" placeholder="usuario" type="text">
 <label>Contraseña :</label>
-<input name="passwd" placeholder="**********" type="password">
+<input name="password" placeholder="**********" type="password">
 <input name="enviar" type="submit" value=" Login ">
-</form>
+</form><a href="logout.php">Logout</a>
 </div>
-<!--
+
 		<h2 class="titlat">Registro</h2>
 		<div id="registro" class="cuerpolateral">
-			<a href="#">Registrese con nosotros</a> y obtenga muchas ventajas.
+			<a href="usuarionuevo.php">Registrese con nosotros</a> y obtenga muchas ventajas.
 		</div>
--->
+
 		<h2 class="titlat">Otras informaciones</h2>
 		<div id="otras" class="cuerpolateral">
 			<ul>
@@ -50,7 +50,7 @@ if (isset($_GET["errorusuario"])){
 		</div>
 	</div>
 	<div id="pie">
-		Pruebas de maquetación CSS &copy; 2005 DesarrolloWeb.com
+		Pruebas &copy; 2017 DaniSemipresencial.tk
 	</div>
 </div>
 </div>
