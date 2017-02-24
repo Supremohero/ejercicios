@@ -1,6 +1,0 @@
-<?php
-setcookie("carrito[ref1]", '', time()-100);
-setcookie("carrito[ref2]", '', time()-100);
-setcookie("carrito[ref3]", '', time()-100);
-header('Location: tienda.php');
-?>
