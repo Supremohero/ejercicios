@@ -16,29 +16,46 @@
 		</div>
 <div id="login">
 <?php
-if (isset($_GET["errorusuario"])){
-	if ($_GET["errorusuario"]=="si"){
-		echo '<h2>DATOS INCORRECTOS</h2>';
-	}else{
-		echo '<h2>Introduce tus datos</h2>';
+$error=''; // Variable To Store Error Message
+if (isset($_POST['submit'])) {
+	if (empty($_POST['username']) || empty($_POST['password'])) {
+		$error = "Username or Password is invalid";
 	}
-}else{
-	echo '<h2>Introduce tus datos</h2>';
+		// Define $username and $password
+		$username=$_POST['username'];
+		$password=$_POST['password'];
+		$username = strtolower($username);
+		// Establishing Connection with Server by passing server_name, user_id and password as a parameter
+		$connection = @mysql_connect("localhost", "root", "");
+		// To protect MySQL injection for Security purpose
+		//$username = stripslashes($username);
+		//$password = stripslashes($password);
+		//$username = mysql_real_escape_string($username);
+		//$password = mysql_real_escape_string($password);
+		// Selecting Database
+		$db = mysql_select_db("curso_php", $connection);
+		// SQL query to fetch information of registerd users and finds user match.
+		$query = mysql_query("select * from usuarios where password='$password' AND username='$username'", $connection);
+		$rows = mysql_num_rows($query);
+		if ($rows == 1) {
+			//$_SESSION["autentificado"]= "SI";
+			$_SESSION['login_user']=$username; // Initializing Session
+		} else {
+			$error = "Username or Password is invalid";
+		}
+			mysql_close($connection); // Closing Connection
 }
-?>
-<form action="login.php" method="post">
-<label>Usuario :</label>
-<input name="username" placeholder="usuario" type="text">
-<label>Contraseña :</label>
-<input name="password" placeholder="**********" type="password">
-<input name="enviar" type="submit" value=" Login ">
-</form><a href="logout.php">Logout</a>
-</div>
 
-		<h2 class="titlat">Registro</h2>
-		<div id="registro" class="cuerpolateral">
-			<a href="usuarionuevo.php">Registrese con nosotros</a> y obtenga muchas ventajas.
-		</div>
+if(isset($_SESSION['login_user'])){
+  include ('profile.php');
+}
+else {
+  include ('login.php');
+}
+
+?>
+
+
 
 		<h2 class="titlat">Otras informaciones</h2>
 		<div id="otras" class="cuerpolateral">

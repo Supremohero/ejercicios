@@ -1,4 +1,5 @@
 <?php
+session_start(); // Starting Session
 $titulo_pagina = "Primer Include";
 $descripcion = "Primer include";
 $keywords = "primer, include, palabras clave, keywords";
