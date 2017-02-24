@@ -1,3 +1,5 @@
+CREATE DATABASE curso_php;
+
 USE curso_php;
 
 CREATE TABLE usuarios (

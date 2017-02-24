@@ -1,4 +1,5 @@
 <?php
+session_start(); // Starting Session
 define ("HOSTNAME","localhost");
 define ("DATABASE","curso_php");
 define ("USER_DB","root");
