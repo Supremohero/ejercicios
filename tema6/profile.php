@@ -2,8 +2,6 @@
 		</div>
 
 <?php
-		// Establishing Connection with Server by passing server_name, user_id and password as a parameter
-		$connection = @mysql_connect("localhost", "root", "");
 		// Selecting Database
 		$db = mysql_select_db("curso_php", $connection);
 		// SQL query to fetch information of registerd users and finds user match.

@@ -34,11 +34,10 @@
 		</div>
 <div id="login">
 <?php
+		// Establishing Connection with Server by passing server_name, user_id and password as a parameter
+		$connection = @mysql_connect("localhost", "root", "");
 $error=''; // Variable To Store Error Message
 if (isset($_POST['submit'])) {
-	if (empty($_POST['username']) || empty($_POST['password'])) {
-		$error = "Usuario o contraseña incorrecto";
-	}
 		// Define $username and $password
 		$username=$_POST['username'];
 		$password=$_POST['password'];
@@ -56,12 +55,10 @@ if (isset($_POST['submit'])) {
 		$query = mysql_query("select * from usuarios where password='$password' AND username='$username'", $connection);
 		$rows = mysql_num_rows($query);
 		if ($rows == 1) {
-			//$_SESSION["autentificado"]= "SI";
 			$_SESSION['login_user']=$username; // Initializing Session
 		} else {
 			$error = "Usuario o contraseña incorrecto";
 		}
-			mysql_close($connection); // Closing Connection
 }
 
 if(isset($_SESSION['login_user'])){
