@@ -3,7 +3,7 @@
 
 <?php
 		// Selecting Database
-		$db = mysql_select_db(DATABASE, $connection);
+		$db = mysql_select_db("curso_php", $connection);
 		// SQL query to fetch information of registerd users and finds user match.
 		$query = mysql_query("select nombre from usuarios where username='$_SESSION[login_user]'", $connection);
 		$nombre = mysql_result($query, 0);
