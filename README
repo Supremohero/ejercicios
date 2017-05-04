@@ -1,2 +1,8 @@
-This is a git repo
 ####
+Pendiente
+####
+1.- Seguridad.php
+2.- MYSQL multiple articulos y fotos
+3.- Cambiar nombre usuarionuevo.php a registro.php
+4.- Cabecera.php tiene un @mysql_connect();
+5.- Al sacar datos por php accediendo a mysql no salen las tildes.

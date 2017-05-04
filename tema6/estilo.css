@@ -17,6 +17,12 @@ INPUT {
 H1{
 	font-size: 12pt;
 }
+
+table tr td {
+    border: 1px solid black;
+    font-size:8pt;
+}
+
 #borde{
 	border: 2px solid #cccccc;
 	text-align: left;
@@ -95,6 +101,26 @@ H1{
 #incorrecto {
     background-color: Red;
     color: Gainsboro;
+}
+
+#titulo {
+    background-color: orange;
+}
+
+#editar {
+    background-color: SpringGreen;
+}
+
+#borrar {
+    background-color: red;
+}
+
+#incorrecto {
+    background-color: red;
+}
+
+#correcto {
+
 }
 
 

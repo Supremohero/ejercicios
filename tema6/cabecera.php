@@ -4,6 +4,7 @@
 	<link rel="STYLESHEET" type="text/css" href="estilo.css">
 	<meta name="Description" content='<?php parametro_plantilla("descripcion"); ?>'>
 	<meta name="Keywords" content='<?php parametro_plantilla("keywords"); ?>'>
+	<meta charset="utf-8">
 </head>
 
 <body>
@@ -23,13 +24,11 @@
 
 
 	<div id="lateral">
-		<h2 class="titlat">Buscar</h2>
+		<h2 class="titlat">Buscar artículos</h2>
 		<div id="fbuscar" class="cuerpolateral">
 			<form>
 				<div id="campotexto"><input type="text" name="criterio"></div>
 				<div id="botonbuscar"><input type=image src="img/go.gif" width="25" height="15"></div>
-				<div class="radio"><input type="radio" name="op" value="1"> En la Web del invierno</div>
-				<div class="radio"><input type="radio" name="op" value="2"> En toda la Web</div>
 			</form>
 		</div>
 <div id="login">
@@ -72,13 +71,9 @@ else {
 
 
 ?>
-		<h2 class="titlat">Otras informaciones</h2>
+		<h2 class="titlat">Carrito de la compra</h2>
 		<div id="otras" class="cuerpolateral">
-			<ul>
-			<li><a href="#">Quienes somos</a>
-			<li><a href="#">Nuestra misión</a>
-			<li><a href="#">Agenda de eventos</a>
-			</ul>
+
 		</div>
 	</div>
 

@@ -21,23 +21,21 @@
 
 ?>
 
-<h2 class="titlat">Bienvenido <?php echo $nombre ?></h2>
+<h2 class="titlat">Bienvenido <b><?php echo $nombre ?></b></h2>
 <div id="registro" class="cuerpolateral">
-	<h1>Bienvenido <?php echo $nombre ?> </h1>
 			<div id="otras" class="cuerpolateral">
 			<h3>
 			<ul>
 			<li><a href="perfil.php">Mi perfil</a>
 			<li><a href="#">Mis compras</a>
-			<li><a href="#">Mi carrito de la compra</a>
 			<?php
-				if($tipo == 'empleado') {
-				?>
-					<li><a href="#">#Pedidos</a>
-					<li><a href="#">#Artículos</a>
-				<?php
+				if($tipo == 'Empleado') {
+					include("empleado.php");
 				}
-?>
+				if($tipo == 'SuperUsuario') {
+					include("superusuario.php");
+				}
+			?>
 			</ul>
 			</h3>
 		</div>

@@ -1,4 +1,7 @@
 <?php
+$titulo_pagina = "Registro";
+$descripcion = "registro";
+$keywords = "registro, palabras clave, keywords";
 include("funciones.php");
 	$con = mysqli_connect(HOSTNAME, USER_DB, PASSWORD_DB, DATABASE);
 	if (mysqli_connect_errno()) {

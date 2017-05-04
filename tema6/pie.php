@@ -1,7 +1,7 @@
 		<div id="navabajo">
 		<a href="index.php">Volver</a> | 
-		<a href="#">Portada</a> | 
-		<a href="#">Mapa del sitio</a>
+		<a href="#">Agenda de eventos</a> | 
+		<a href="#">Reporte</a>
 		</div>
 	</div>
 	<div id="pie">
