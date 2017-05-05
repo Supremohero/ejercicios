@@ -5,3 +5,5 @@ Pendiente
 2.- MYSQL multiple articulos en pedidos, multiples fotos y multiples categorías.
 3.- Cambiar nombre usuarionuevo.php a registro.php
 4.- Cabecera.php tiene un @mysql_connect();
+5.- articulos.php pagina para editar articulos por empleados como la de usuarios.
+6.- 

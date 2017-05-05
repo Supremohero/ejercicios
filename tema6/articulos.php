@@ -6,18 +6,20 @@ $num_filas = 5;
 if(!isset($orden)){
 	$orden ='precio';
 }
+
 if (isset($_GET["desplazamiento"]))
 	$desplazamiento = $_GET["desplazamiento"];
 else $desplazamiento = 0;
 $prevpag = $desplazamiento / 5;
 $currpag = $desplazamiento / 5 + 1;
 $nextpag = $desplazamiento / 5 + 2;
+	if (isset($_GET['orden'])) {
+		$orden = $_GET['orden'];
+	}
+
 include("funciones.php");
 include("cabecera.php");
 //Se incluye la cabecera y comienza el cuerpo de la página a continuación
-	if (isset($_GET['enviar'])) {
-		$orden = $_GET['orden'];
-	}
 ?>
 
 
@@ -31,11 +33,11 @@ include("cabecera.php");
 <form name="ordenar" id="ordenar" action="articulos.php" method="get">
 <h1><label for="orden">Ordenar por:</label>
 <select name="orden" id="orden">
- <option value="precio" selected="selected">Precio</option>
+ <option value="precio">Precio</option>
  <option value="nombre">Nombre</option>
- <option value="oferta">Oferta</option>
 </select>
- <input type="submit" name="enviar" id="enviar" value="enviar" /></h1>
+<label for="enviar">enviar</label>
+ <input type="submit" name="desplazamiento" id="enviar" value="<?php echo $desplazamiento?>" /></h1>
 </form>
 <?php
 mostrarArticulos();

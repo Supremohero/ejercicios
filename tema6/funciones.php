@@ -29,9 +29,7 @@ function mostrarClientes() {
 
 function mostrarArticulos() {
 $num_filas = 5;
-if(!isset($orden)){
-	$orden ='precio';
-}
+global $orden;
 if (isset($_GET["desplazamiento"]))
 	$desplazamiento = $_GET["desplazamiento"];
 else $desplazamiento = 0;
