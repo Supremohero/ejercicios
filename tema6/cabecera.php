@@ -4,7 +4,7 @@
 	<link rel="STYLESHEET" type="text/css" href="estilo.css">
 	<meta name="Description" content='<?php parametro_plantilla("descripcion"); ?>'>
 	<meta name="Keywords" content='<?php parametro_plantilla("keywords"); ?>'>
-	<meta charset="utf-8">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 </head>
 
 <body>
@@ -31,12 +31,14 @@
 				<div id="botonbuscar"><input type=image src="img/go.gif" width="25" height="15"></div>
 			</form>
 		</div>
-<div id="login">
+		<div id="login">
 <?php
-		// Establishing Connection with Server by passing server_name, user_id and password as a parameter
-		$connection = @mysql_connect("localhost", "root", "");
-$error=''; // Variable To Store Error Message
-if (isset($_POST['submit'])) {
+	// Establishing Connection with Server by passing server_name, user_id and password as a parameter
+	$connection = @mysql_connect("localhost", "root", "");
+	//arreglar problema con acentos
+	mysql_query("SET NAMES 'utf8'");
+	$error=''; // Variable To Store Error Message
+	if (isset($_POST['submit'])) {
 		// Define $username and $password
 		$username=$_POST['username'];
 		$password=$_POST['password'];
@@ -56,19 +58,14 @@ if (isset($_POST['submit'])) {
 		} else {
 			$error = "Usuario o contraseña incorrecto";
 		}
-}
+	}
 
-if(isset($_SESSION['login_user'])){
-  include ('profile.php');
-}
-else {
-  include ('login.php');
-}
-
-
-
-
-
+	if(isset($_SESSION['login_user'])){
+		include ('profile.php');
+	}
+	else {
+		include ('login.php');
+	}
 
 ?>
 		<h2 class="titlat">Carrito de la compra</h2>
@@ -76,9 +73,14 @@ else {
 
 		</div>
 	</div>
+		<!-- Fin del lateral derecho e inicio del lateral izquierdo -->
 
-
-
+	<div id="lateral2">
+		<h2 class="titlat">Categorías</h2>
+		<div id="otras" class="cuerpolateral">
+			Mostrar categorías.<br/>Mostrar categorías.<br/>Mostrar categorías.
+		</div>
+	</div>
 
 
 

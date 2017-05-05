@@ -1,6 +1,5 @@
 </form>
 		</div>
-
 <?php
 		// Selecting Database
 		$db = mysql_select_db("curso_php", $connection);

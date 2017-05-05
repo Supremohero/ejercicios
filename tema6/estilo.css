@@ -26,22 +26,22 @@ table tr td {
 #borde{
 	border: 2px solid #cccccc;
 	text-align: left;
-	width: 700px;
+	width: 840px;
 	margin: auto;
 }
 #contenedor{
 	text-align: left;
-	width: 700px;
+	width: 840px;
 	margin: auto;
 	background-color : #ffffff;
 }
 #cabecera{
 	height : 106px;
-	width: 700px;
+	width: 840px;
 }
 #navegador{
-	background : #F5F4C3 url(images/fondonav.gif);
-	padding : 3px 10px 5px 10px;
+	background : #F5F4C3 url(img/fondonav.gif);
+	padding : 3px 10px 5px  140px;
 	border-top : 1px solid #cccccc;
 	border-bottom : 1px solid #cccccc;
 }
@@ -61,6 +61,13 @@ table tr td {
 	background-color: #EBF2FE;
 	border-bottom : 1px solid #cccccc;
 	border-left : 1px solid #cccccc;
+}
+#lateral2{
+	width: 130px;
+	float:left;
+	background-color: #EBF2FE;
+	border-bottom : 1px solid #cccccc;
+	border-right : 1px solid #cccccc;
 }
 #campotexto{
 	float: left;
@@ -86,7 +93,7 @@ table tr td {
 }
 #otras li{
 	padding-left: 14px; 
-	background: transparent url("images/bullet.gif") 0 2px no-repeat;
+	background: transparent url("img/bullet.gif") 0 2px no-repeat;
 	margin-bottom: 10px;	
 }
 #pie{
