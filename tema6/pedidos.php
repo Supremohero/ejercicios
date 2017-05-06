@@ -15,7 +15,7 @@ include("cabecera.php");
 <td><b>Pago</b></td>
 <td><b>Envío</b></td>
 <?php
-mostrarCompras();
+mostrarPedidos();
 ?>
 </td></tr></table><br>
 

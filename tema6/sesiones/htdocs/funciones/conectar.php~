@@ -1,0 +1,4 @@
+<?php
+mysql_connect("localhost", "root", "carole/8517") or die("No se pudo conectar: " . mysql_error());
+mysql_select_db("app");
+?>

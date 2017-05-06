@@ -12,6 +12,8 @@ include("cabecera.php");
 		Teléfono: <?php echo $telefono ?><br/>
 		E-mail: <?php echo $email ?><br/>
 		Tipo de cuenta: <?php echo $tipo ?><br/>
+		<a href="usuarioeditar.php"><button>Editar Datos Personales</button></a><br/>
+		<a href="cambiarpassword.php"><button>Modificar la contraseña</button></a>
 
 <?php
 

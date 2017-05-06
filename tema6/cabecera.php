@@ -70,7 +70,9 @@
 ?>
 		<h2 class="titlat">Carrito de la compra</h2>
 		<div id="otras" class="cuerpolateral">
-
+<?php 
+include ("vercarrito.php");
+?>
 		</div>
 	</div>
 		<!-- Fin del lateral derecho e inicio del lateral izquierdo -->
@@ -78,7 +80,14 @@
 	<div id="lateral2">
 		<h2 class="titlat">Categorías</h2>
 		<div id="otras" class="cuerpolateral">
-			Mostrar categorías.<br/>Mostrar categorías.<br/>Mostrar categorías.
+	
+<ul>
+
+<?php
+mostrarCategorias();
+
+?>
+</ul>
 		</div>
 	</div>
 

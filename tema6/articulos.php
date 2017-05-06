@@ -29,11 +29,13 @@ include("cabecera.php");
 <td><b>Nombre de Artículo</b></td>
 <td><b>Descripción</b></td>
 <td><b>Precio</b></td>
+<td><b>Categoría</b></td>
 <td><b>Oferta</b></td>
 <form name="ordenar" id="ordenar" action="articulos.php" method="get">
 <h1><label for="orden">Ordenar por:</label>
 <select name="orden" id="orden">
  <option value="precio">Precio</option>
+ <option value="categoria">Categoría</option>
  <option value="nombre">Nombre</option>
 </select>
 <label for="enviar">enviar</label>
@@ -42,7 +44,6 @@ include("cabecera.php");
 <?php
 mostrarArticulos();
 echo "<br/>";
-echo $orden;
 
 echo "<br/><br/>";
 include("pie.php");

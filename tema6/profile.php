@@ -26,7 +26,7 @@
 			<h3>
 			<ul>
 			<li><a href="perfil.php">Mi perfil</a>
-			<li><a href="#">Mis compras</a>
+			<li><a href="compras.php">Mis compras</a>
 			<?php
 				if($tipo == 'Empleado') {
 					include("empleado.php");

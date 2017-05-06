@@ -42,6 +42,7 @@ fecha DATE NOT NULL,
 pago ENUM('Efectivo','Tarjeta','PayPal') NOT NULL,
 envio ENUM('Normal','Express') NOT NULL
 );
+
 INSERT INTO pedidos (cliente, contenido, pago, envio, fecha) VALUES ('juanjoseml', '2', 'PayPal', 'Express',CURRENT_DATE),('juanjoseml', '3', 'PayPal', 'Express',CURRENT_DATE);
 
 
@@ -56,4 +57,6 @@ id INT AUTO_INCREMENT PRIMARY KEY,
 nombre CHAR(30) NOT NULL,
 padre CHAR(30) REFERENCES categorias(nombre)
 );
+
+INSERT INTO categorias (nombre, padre) VALUES ('Videojuegos', NULL),('Telefonia', NULL),('Electrodomesticos', NULL),('Hogar', NULL),('Mascotas', NULL),('Escolar', NULL),('Higiene', NULL),('Muebles', NULL),('Peliculas', NULL),('Libros', NULL);
 
