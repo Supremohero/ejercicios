@@ -17,8 +17,7 @@ echo '<br><a href="tienda.php"><button>Seguir comprando</button></a><a href="rea
 
 
 function estantes() {
-echo '
-<form name="formulario" method="get" action="compra.php">
+echo '<form name="formulario" method="get" action="compra.php">
 <table border="1px,solid,black">
 <tr>
 	<td><b>Referencia</b></td>

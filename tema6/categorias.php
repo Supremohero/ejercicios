@@ -32,10 +32,12 @@ include("cabecera.php");
 	<h1><?php echo parametro_plantilla("titulo_pagina"); echo " - Página $currpag"?></h1>
 <table>
 <tr id='titulo'>
+<td><b>Imágen</b></td>
 <td><b>Nombre de Artículo</b></td>
 <td><b>Descripción</b></td>
 <td><b>Precio</b></td>
 <td><b>Oferta</b></td>
+<td><b>Añadir al carrito</b></td>
 <form name="ordenar" id="ordenar" action="categorias.php" method="get">
 <h1><label for="orden">Ordenar por:</label>
 <select name="orden" id="orden">
@@ -43,12 +45,13 @@ include("cabecera.php");
  <option value="nombre">Nombre</option>
 </select>
   <input type="hidden" name="categoria" value="<?php echo $categoria ?>">
-<label for="enviar">enviar</label>
+ <label for="enviar">enviar</label> 
  <input type="submit" name="desplazamiento" id="enviar" value="<?php echo $desplazamiento?>" /></h1>
 </form>
+<form name="carrito" id="carrito" action="compra.php" method="POST">
 <?php
 mostrarArticulosPorCategoria();
-echo "<br/>";
+echo "<br/></form>";
 
 echo "<br/><br/>";
 include("pie.php");

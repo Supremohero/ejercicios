@@ -41,7 +41,17 @@ function mostrarArticulos() {
 	if ($result = mysqli_query($con, $sql)) {
 		while ($row = mysqli_fetch_assoc($result)) {
 			$id = $row["id"];
-			printf ("%s %s %s %s %s", "</td></tr><tr><td>" . $row["nombre"], "</td><td>" . $row["descripcion"], "</td><td>" . $row["precio"], "€</td><td>" . $row["categoria"],  "</td><td>" . $row["oferta"]);
+				// seleccionar las categorias de cada articulo
+			$sql2 = "SELECT nombre FROM categorias WHERE articulo = '$id'";
+			$acentos = $con->query("SET NAMES 'utf8'");
+
+			printf ("%s %s %s %s %s", "</td></tr><tr><td><a href='articulos/$id.png'><img src='articulos/" . $row["id"] . ".png' width='50px' height='50px'></a>", "</td><td>". $row["nombre"], "</td><td>" . $row["descripcion"], "</td><td>" . $row["precio"],  "€</td><td><b>" . $row["oferta"] . "</b></td><td>");
+			//imprimimos las categorias
+			if ($result2 = mysqli_query($con, $sql2)) {
+				while ($row = mysqli_fetch_assoc($result2)) {
+					printf ("%s", "<a href='categorias.php?categoria=" . $row["nombre"] . "'>" . $row["nombre"] . "</a> ");
+				}
+			}
 		}
 		mysqli_free_result($result);
 	}
@@ -116,12 +126,11 @@ function mostrarPedidos() {
 
 function mostrarCategorias() {
 	$con = mysqli_connect(HOSTNAME, USER_DB, PASSWORD_DB, DATABASE);
-	$sql = "SELECT nombre FROM categorias";
+	$sql = "SELECT DISTINCT nombre FROM categorias";
 	$acentos = $con->query("SET NAMES 'utf8'");
 	if ($result = mysqli_query($con, $sql)) {
 		while ($row = mysqli_fetch_assoc($result)) {
 			$nombre = $row["nombre"];
-			$nombre = strtolower($nombre);
 			printf ("%s", "<li><a href='categorias.php?categoria=$nombre'>" . $row["nombre"] . "</a></li>");
 		}
 		mysqli_free_result($result);
@@ -137,14 +146,14 @@ function mostrarArticulosPorCategoria() {
 		$desplazamiento = $_GET["desplazamiento"];
 	else $desplazamiento = 0;
 	$con = mysqli_connect(HOSTNAME, USER_DB, PASSWORD_DB, DATABASE);
-	$query1 = mysqli_query($con, "select * from articulos WHERE categoria = '$categoria'");
+	$query1 = mysqli_query($con, "select DISTINCT * from categorias WHERE nombre = '$categoria'");
 	$total_articulos = mysqli_num_rows($query1);
-	$sql = "SELECT * FROM articulos WHERE categoria = '$categoria' ORDER BY $orden LIMIT $desplazamiento, $num_filas";
+	$sql = "SELECT DISTINCT articulos.* FROM articulos,categorias WHERE categorias.nombre = '$categoria' && articulos.id = categorias.articulo ORDER BY $orden LIMIT $desplazamiento, $num_filas";
 	$acentos = $con->query("SET NAMES 'utf8'");
 	if ($result = mysqli_query($con, $sql)) {
 		while ($row = mysqli_fetch_assoc($result)) {
 			$id = $row["id"];
-			printf ("%s %s %s %s", "</td></tr><tr><td>" . $row["nombre"], "</td><td>" . $row["descripcion"], "</td><td>" . $row["precio"],  "</td><td>" . $row["oferta"]);
+			printf ("%s %s %s %s %s %s", "</td></tr><tr><td><a href='articulos/$id.png'><img src='articulos/" . $row["id"] . ".png' width='50px' height='50px'></a>", "</td><td>". $row["nombre"], "</td><td>" . $row["descripcion"], "</td><td>" . $row["precio"] . "€",  "</td><td>" . $row["oferta"],  "</td><td><input type='submit' name='" . $row["id"] . "' id='" . $row["id"] . "' value='Comprar'>");
 		}
 		mysqli_free_result($result);
 	}
@@ -172,58 +181,26 @@ function mostrarArticulosPorCategoria() {
 }
 
 
-function mostrar_carrito() {
+function mostrarCarrito() {
 	echo "<br/>";
-	if (isset ($_COOKIE["carrito"])) {
+	$unidadestotal = 0;
+	$username = $_SESSION['login_user'];
+	if (isset ($_COOKIE["cesta_de_".$username])) {
 		echo "<table border='1px,solid,black'> <tr> <td><b>Referencia</b></td> <td><b>Unidades</b></td> </tr>";
-		foreach ($_COOKIE["carrito"] as $valor => $var) {
-			echo "<tr> <td>$valor</td> <td>$var</td> </tr>";
+		foreach ($_COOKIE["cesta_de_".$username] as $idarticulo => $unidades) {
+			$unidadestotal = $unidadestotal + $unidades;
+			$con = mysqli_connect(HOSTNAME, USER_DB, PASSWORD_DB, DATABASE);
+			$articulo = mysqli_query($con, "select nombre from articulos WHERE id = '$idarticulo'");
+			$row = mysqli_fetch_assoc($articulo);
+			printf ("%s %s", "<tr> <td>" . $row['nombre'], "</td> <td>" . $unidades . "</td> </tr>");
 		}
-		echo "<tr><td colspan='2'>Número total de unidades: $unidadestotal </td></tr></table>";
+		echo "<tr><td colspan='2'>Número total de unidades: $unidadestotal &nbsp; </td></tr></table>";
 	}else {
 		echo "<h1><i>El carrito está vacío</i></h1><br/>";
 	}
-	echo '<br><a href="tienda.php"><button>Seguir comprando</button></a><a href="realizarcompra.php"><button>Finalizar compra</button></a><br>';
+	echo '<br><a href="realizarcompra.php"><button>Finalizar compra</button></a><br>';
 }
 
-
-function estantes() {
-	echo '
-<form name="formulario" method="get" action="compra.php">
-<table border="1px,solid,black">
-<tr>
-	<td><b>Referencia</b></td>
-	<td><b>Descripción</b></td>
-	<td><b>Precio</b></td>
-	<td></td>
-</tr>
-
-<tr>
-	<td>ref1</td>
-	<td>Descripcion articulo 1</td>
-	<td>5€</td>
-	<td><input type="submit" name="ref1" value="Comprar"></td>
-</tr>
-
-<tr>
-	<td>ref2</td>
-	<td>Descripcion articulo 2</td>
-	<td>3€</td>
-	<td><input type="submit" name="ref2" value="Comprar"></td>
-</tr>
-
-<tr>
-	<td>ref3</td>
-	<td>Descripcion articulo 3</td>
-	<td>2€</td>
-	<td><input type="submit" name="ref3" value="Comprar"></td>
-</tr>
-</table>
-</form>
-<a href="vercarrito.php"><button>Ver carrito</button></a>
-<a href="../logout.php"><button>Cerrar sesión</button></a>
-	';
-}
 
 
 

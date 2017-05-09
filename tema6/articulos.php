@@ -26,6 +26,7 @@ include("cabecera.php");
 	<h1><?php echo parametro_plantilla("titulo_pagina"); echo " - Página $currpag"?></h1>
 <table>
 <tr id='titulo'>
+<td><b>Imágen</b></td>
 <td><b>Nombre de Artículo</b></td>
 <td><b>Descripción</b></td>
 <td><b>Precio</b></td>
@@ -35,7 +36,6 @@ include("cabecera.php");
 <h1><label for="orden">Ordenar por:</label>
 <select name="orden" id="orden">
  <option value="precio">Precio</option>
- <option value="categoria">Categoría</option>
  <option value="nombre">Nombre</option>
 </select>
 <label for="enviar">enviar</label>

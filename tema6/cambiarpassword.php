@@ -37,32 +37,31 @@ if(isset($_REQUEST['enviar'])){
 		$rows = mysql_num_rows($query);
 		if ($rows == 1) {
 			echo "<h1>CORRECTO</h1>";
+			//validar campos
+			$er_password = "/^[a-zA-Z0-9]{8,30}$/";
+			
+			if (!preg_match($er_password, $npassword)) {
+				$npassword = "";
+			}
+			if(empty($vpassword1)|($vpassword2)|($npassword)) {
+				//los que esten vacios se ponen de rojo
+				if(empty($vpassword1)) {
+					$cVpassword1 = "incorrecto";
+				} else {
+					$cVpassword1 = "correcto";
+				}	
+				echo "<h1>Algunos datos son incorrectos</h1>";
+			} else { // si todo es correcto modificamos y le indicamos al usuario que todo ha ido correctamente
+				$sql = "UPDATE usuarios SET password = '$npassword' WHERE username = '$username'";
+				mysqli_query($con, $sql);
+				echo "<h1><i>Cambios guardados</i></h1>";
+			}
 		} else {
 			echo "<h1>INCORRECTO</h1>";
 		}
-		//validar campos
-		$er_password = "/^[a-zA-Z0-9]{8,30}$/";
-		
-		if (!preg_match($er_password, $npassword)) {
-			$npassword = "";
-		}
-		
-	//} else {
-		if(empty($vpassword1)|($vpassword2)|($npassword)) {
-			//los que esten vacios se ponen de rojo
-			if(empty($vpassword1)) {
-				$cVpassword1 = "incorrecto";
-			} else {
-				$cVpassword1 = "correcto";
-			}
-			
-			echo "<h1>Algunos datos son incorrectos</h1>";
-	
-		} else { // si todo es correcto modificamos y le indicamos al usuario que todo ha ido correctamente
-			$sql = "UPDATE usuarios SET password = '$npassword' WHERE username = '$username'";
-			mysqli_query($con, $sql);
-			echo "<h1><i>Cambios guardados</i></h1>";
-		}
+	} // si no coinciden las contraseñas..
+ 	else {
+		echo "<h1>Contraseña actual incorrecta</h1>";
 	}
 }
 mysqli_close($con);

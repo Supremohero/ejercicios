@@ -5,7 +5,7 @@ $keywords = "carrito, palabras clave, keywords";
 
 require("funciones.php");
 require ("compra.php");
-//include("seguridad.php"); // al tener el carrito en las cookies no es necesario que este autenticado
+//include("seguridad.php"); // al tener el carrito en las cookies no es necesario que este logueado
 
 
 $num_filas = 5;
@@ -28,28 +28,9 @@ include("cabecera.php");
 ?>
 
 
-	<h1><?php echo parametro_plantilla("titulo_pagina"); echo " - Página $currpag"?></h1>
-<!--
-<table>
-<tr id='titulo'>
-<td><b>Nombre de Artículo</b></td>
-<td><b>Descripción</b></td>
-<td><b>Precio</b></td>
-<td><b>Categoría</b></td>
-<td><b>Oferta</b></td>
-<form name="ordenar" id="ordenar" action="articulos.php" method="get">
-<h1><label for="orden">Ordenar por:</label>
-<select name="orden" id="orden">
- <option value="precio">Precio</option>
- <option value="categoria">Categoría</option>
- <option value="nombre">Nombre</option>
-</select>
-<label for="enviar">enviar</label>
- <input type="submit" name="desplazamiento" id="enviar" value="<?php echo $desplazamiento?>" /></h1>
-</form>
--->
+	<h1><?php echo parametro_plantilla("titulo_pagina") ?></h1>
 <?php
-mostrar_carrito();
+mostrarCarrito();
 echo "<br/>";
 
 echo "<br/><br/>";

@@ -1,13 +1,11 @@
 <?php
-
-if (!isset ($_COOKIE["carrito"])) {
+$username = $_SESSION['login_user'];
+if (!isset ($_COOKIE["cesta_de_".$username])) {
 		echo "<h1>El carrito está vacío";
 	}
 	else {
-		echo "<h1>Llevas $unidadestotal artículos seleccionados.";
+		mostrarCarrito();
 	}
 
 ?>
 <br/>
-<br/>
-<a href="carrito.php">Ver carrito</a></h1>

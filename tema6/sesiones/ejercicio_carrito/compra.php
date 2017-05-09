@@ -27,19 +27,19 @@ $unidadestotal = 0;
 switch ($ref) {
 	case "ref1":
 		$ref1unidades = $ref1unidades + 1;
-		setcookie("carrito[$ref]", $ref1unidades, time() + 3600);
+		setcookie("carrito[$ref]", $ref1unidades, time() + 360000);
 		header('Location: tienda.php');
 		break;
 
 	case "ref2":
 		$ref2unidades = $ref2unidades + 1;
-		setcookie("carrito[$ref]", $ref2unidades, time() + 3600);
+		setcookie("carrito[$ref]", $ref2unidades, time() + 360000);
 		header('Location: tienda.php');
 		break;
 		
 	case "ref3":
 		$ref3unidades = $ref3unidades + 1;
-		setcookie("carrito[$ref]", $ref3unidades, time() + 3600);
+		setcookie("carrito[$ref]", $ref3unidades, time() + 360000);
 		header('Location: tienda.php');
 		break;
 }

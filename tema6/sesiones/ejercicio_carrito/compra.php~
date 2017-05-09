@@ -1,5 +1,4 @@
 <?php
-require("../seguridad.php");
 $ref = key($_REQUEST);
 $unidadestotal = 0;
 
