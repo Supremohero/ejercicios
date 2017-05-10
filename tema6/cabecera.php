@@ -21,13 +21,13 @@
 
 
 
-
+<!--BUSCAR ARTICULOS-->
 
 	<div id="lateral">
 		<h2 class="titlat">Buscar artículos</h2>
 		<div id="fbuscar" class="cuerpolateral">
-			<form>
-				<div id="campotexto"><input type="text" name="criterio"></div>
+			<form id="buscador" name="buscador" method="post" action="buscararticulos.php">
+				<div id="campotexto"><input type="search" name="buscar" id="buscar"></div>
 				<div id="botonbuscar"><input type=image src="img/go.gif" width="25" height="15"></div>
 			</form>
 		</div>
@@ -71,7 +71,14 @@
 		<h2 class="titlat">Carrito de la compra</h2>
 		<div id="otras" class="cuerpolateral">
 <?php 
-include ("vercarrito.php");
+
+	if(isset($_SESSION['login_user'])){
+		include ("vercarrito.php");
+	}
+	else {
+		echo "<h1>Loguee su cuenta para poder ver el carrito</h1>";
+	}
+
 ?>
 		</div>
 	</div>

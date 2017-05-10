@@ -1,4 +1,3 @@
-</form>
 		</div>
 <?php
 		// Selecting Database

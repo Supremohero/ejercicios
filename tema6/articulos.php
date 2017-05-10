@@ -30,8 +30,10 @@ include("cabecera.php");
 <td><b>Nombre de Artículo</b></td>
 <td><b>Descripción</b></td>
 <td><b>Precio</b></td>
-<td><b>Categoría</b></td>
 <td><b>Oferta</b></td>
+<td><b>Stock</b></td>
+<td><b>Categoría</b></td>
+<td><b>Modificar</b></td>
 <form name="ordenar" id="ordenar" action="articulos.php" method="get">
 <h1><label for="orden">Ordenar por:</label>
 <select name="orden" id="orden">
@@ -41,6 +43,7 @@ include("cabecera.php");
 <label for="enviar">enviar</label>
  <input type="submit" name="desplazamiento" id="enviar" value="<?php echo $desplazamiento?>" /></h1>
 </form>
+<a href="articulonuevo.php"><button>Añadir nuevo artículo</button></a>
 <?php
 mostrarArticulos();
 echo "<br/>";

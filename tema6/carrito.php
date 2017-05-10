@@ -2,10 +2,10 @@
 $titulo_pagina = "Mi carrito de la compra";
 $descripcion = "carrito";
 $keywords = "carrito, palabras clave, keywords";
-
+//include("seguridad.php");
 require("funciones.php");
 require ("compra.php");
-//include("seguridad.php"); // al tener el carrito en las cookies no es necesario que este logueado
+
 
 
 $num_filas = 5;

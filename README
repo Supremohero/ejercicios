@@ -8,22 +8,10 @@ Pendiente
 5.- articulos.php pagina para editar articulos por empleados como la de editarusuario.
 
 7.- confirmacion de compra creando pedido
-8.- añadir articulos
-9.- editar articulos
-10.- Buscar articulos
-
-
-
-####
-Cuando se añade un articulo en html añadir un listado con las categorias para seleccionar a cuales pertenece.
-
-
-######
-Cada vez que se añada un articulo se tendra que crear las categorias a las que pertenece en la base de datos, de la siguiente forma:
-$articulo = mysqli_query("SELECT id FROM articulos WHERE nombre = $articulo");
-...
-...
-$categoria = $row['categoria'];
-INSERT INTO categorias (articulo, nombre, padre, ) VALUES ('$articulo','$categoria', NULL);
+8.- //done//añadir articulos//
+9.- //done// editar articulos ////////
+10.- //done// Buscar articulos //
+11.- EDITAR CLIENTE .php
+12 .-PEDIDOS CONTENIDO ARTICULOS EN FUNCIONES.php
 
 

@@ -27,8 +27,6 @@ include("funciones.php");
 include("cabecera.php");
 //Se incluye la cabecera y comienza el cuerpo de la página a continuación
 ?>
-
-
 	<h1><?php echo parametro_plantilla("titulo_pagina"); echo " - Página $currpag"?></h1>
 <table>
 <tr id='titulo'>
@@ -48,8 +46,12 @@ include("cabecera.php");
  <label for="enviar">enviar</label> 
  <input type="submit" name="desplazamiento" id="enviar" value="<?php echo $desplazamiento?>" /></h1>
 </form>
+<?php
+	if(isset($_SESSION['login_user'])){
+?>
 <form name="carrito" id="carrito" action="compra.php" method="POST">
 <?php
+}
 mostrarArticulosPorCategoria();
 echo "<br/></form>";
 
